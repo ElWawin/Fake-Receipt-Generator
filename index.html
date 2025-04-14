@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Recibos Falsos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Generador de Recibos Falsos</h1>
+  <form id="receiptForm">
+    <label>Marca:
+      <select id="brand">
+        <option>Apple</option>
+        <option>Nike</option>
+        <option>Adidas</option>
+        <option>Amazon</option>
+        <option>Samsung</option>
+        <option>Shein</option>
+        <option>eBay</option>
+        <option>Microsoft</option>
+        <option>PlayStation</option>
+        <option>Xbox</option>
+        <option>Spotify</option>
+        <option>Netflix</option>
+        <option>Steam</option>
+        <option>AliExpress</option>
+        <option>Uber</option>
+        <option>Google</option>
+        <option>Huawei</option>
+        <option>Wish</option>
+        <option>Facebook</option>
+        <option>Instagram</option>
+      </select>
+    </label>
+    <label>Nombre: <input type="text" id="name" required></label>
+    <label>Email: <input type="email" id="email" required></label>
+    <label>Dirección: <input type="text" id="address" required></label>
+    <label>Producto: <input type="text" id="product" required></label>
+    <label>Precio del artículo ($): <input type="number" id="itemPrice" required></label>
+    <label>Precio de envío ($): <input type="number" id="shipping" required></label>
+    <label>Método de pago:
+      <select id="payment">
+        <option>Tarjeta de crédito</option>
+        <option>PayPal</option>
+        <option>Transferencia</option>
+        <option>Bitcoin</option>
+      </select>
+    </label>
+    <label>Fecha del pedido: <input type="date" id="orderDate" required></label>
+    <label>Fecha de entrega estimada: <input type="date" id="deliveryDate" required></label>
+    <button type="submit">Generar Recibo</button>
+  </form>
+  <div id="receipt" style="display:none;">
+    <div id="receiptContent">
+      <img id="logo" src="" alt="Logo" width="100">
+      <h2 id="brandName"></h2>
+      <p><strong>Nombre:</strong> <span id="rName"></span></p>
+      <p><strong>Email:</strong> <span id="rEmail"></span></p>
+      <p><strong>Dirección:</strong> <span id="rAddress"></span></p>
+      <p><strong>Producto:</strong> <span id="rProduct"></span></p>
+      <p><strong>Precio del artículo:</strong> $<span id="rItemPrice"></span></p>
+      <p><strong>Envío:</strong> $<span id="rShipping"></span></p>
+      <p><strong>Total:</strong> $<span id="rTotal"></span></p>
+      <p><strong>Método de pago:</strong> <span id="rPayment"></span></p>
+      <p><strong>Pedido:</strong> <span id="rOrderDate"></span></p>
+      <p><strong>Llega el:</strong> <span id="rDeliveryDate"></span></p>
+    </div>
+    <button onclick="descargarRecibo()">Descargar como Imagen</button>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
+</html>
